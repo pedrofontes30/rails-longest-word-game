@@ -1,0 +1,18 @@
+<h1>Result</h1>
+
+<p>
+  <% case @result%>
+  <% when 1%>
+    <%=@word.upcase%> can’t be built out of
+    <% @grid[0...-1].each do |letter| %>
+      <%=letter%>,
+    <% end%>
+    <%= @grid[-1] %>
+  <% when 2%>
+    <%=@word.upcase%> is not a valid English word...
+  <% else%>
+    Congratulations! <%=@word.upcase%> is a valid English word!
+  <% end%>
+</p>
+
+<%= link_to 'Play again', 'new' %>
